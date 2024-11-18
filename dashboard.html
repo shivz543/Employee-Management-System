@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #007bff;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .navbar h1 {
+      margin: 0;
+    }
+
+    .dashboard-container {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .dashboard-section {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 30px;
+    }
+
+    .dashboard-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 200px;
+      text-align: center;
+    }
+
+    .dashboard-card h2 {
+      font-size: 24px;
+      margin: 20px 0;
+    }
+
+    .dashboard-card p {
+      font-size: 18px;
+    }
+
+    .btn {
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .logout-btn {
+      margin-top: 30px;
+      padding: 12px 20px;
+      background-color: #e74c3c;
+      text-decoration: none;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .logout-btn:hover {
+      background-color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <h1>Admin Dashboard</h1>
+  </div>
+<div class="dashboard-container">
+    <div class="dashboard-section">
+      <div class="dashboard-card">
+        <h2>Employees</h2>
+        <p>Total: 120</p>
+        <a href="view-employees.html" class="btn">View Employees</a>
+      </div>
+  
+      <div class="dashboard-card">
+        <h2>Departments</h2>
+        <p>Total: 10</p>
+        <a href="view-departments.html" class="btn">View Departments</a>
+      </div>
+  
+      <div class="dashboard-card">
+        <h2>Tasks</h2>
+        <p>Total: 50</p>
+        <a href="view-tasks.html" class="btn">View Tasks</a>
+      </div>
+    <div class="dashboard-card">
+      <h2>Add New Employee</h2>
+      <p>Add a new employee to the system</p>
+      <a href="add-employee.html" class="btn">Add Employee</a>
+    </div>
+  </div>
+  <a href="index.html" class="logout-btn">Logout</a>
+  </div>
+  
+</body>
+</html>

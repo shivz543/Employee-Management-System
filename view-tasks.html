@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    background-color: #ffc107;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 24px;
+  }
+  
+  .task-list-container {
+    max-width: 1100px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #ffc107;
+    color: white;
+  }
+  
+  td {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover td {
+    background-color: #f1f1f1;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #ffc107;
+    color: white;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  .btn:hover {
+    background-color: #e0a800;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+</style>
+<body>
+  <div class="navbar">
+    <h1>Task List</h1>
+  </div>
+
+  <div class="task-list-container">
+    <h2>Tasks</h2>
+    <table id="taskTable" border="1" style="width:100%; margin-top: 20px;">
+      <thead>
+        <tr>
+          <th>Task ID</th>
+          <th>Task Name</th>
+          <th>Status</th>
+          <th>Assigned To</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Task data will be inserted here by JavaScript -->
+      </tbody>
+    </table>
+    <br>
+    <a href="dashboard.html" class="btn">Back to Dashboard</a>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    const tasks = [
+      { id: 1, name: "Build API", status: "In Progress", assignedTo: "John Doe" },
+      { id: 2, name: "Design Landing Page", status: "Completed", assignedTo: "Emily Davis" },
+      { id: 3, name: "Recruit HR Specialist", status: "Pending", assignedTo: "Sam Johnson" },
+      { id: 4, name: "Fix Bugs", status: "In Progress", assignedTo: "Michael Brown" },
+      { id: 5, name: "Test Features", status: "Completed", assignedTo: "John Doe" },
+    ];
+
+    function loadTasks() {
+      const tableBody = document.getElementById('taskTable').getElementsByTagName('tbody')[0];
+      tasks.forEach(task => {
+        const row = tableBody.insertRow();
+        row.innerHTML = `<td>${task.id}</td><td>${task.name}</td><td>${task.status}</td><td>${task.assignedTo}</td>`;
+      });
+    }
+
+    window.onload = loadTasks;
+  </script>
+</body>
+</html>

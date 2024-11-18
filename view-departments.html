@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Department List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="navbar">
+    <h1>Department List</h1>
+  </div>
+
+  <div class="department-list-container">
+    <h2>Departments</h2>
+    <table id="departmentTable" border="1" style="width:100%; margin-top: 20px;">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Department Name</th>
+          <th>Manager</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Department data will be inserted here by JavaScript -->
+      </tbody>
+    </table>
+    <br>
+    <a href="dashboard.html" class="btn">Back to Dashboard</a>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    const departments = [
+      { id: 1, name: "Development", manager: "John Doe" },
+      { id: 2, name: "Design", manager: "Emily Davis" },
+      { id: 3, name: "Human Resources", manager: "Sam Johnson" },
+      { id: 4, name: "Operations", manager: "Jane Smith" },
+      { id: 5, name: "Quality Assurance", manager: "Michael Brown" },
+    ];
+
+    function loadDepartments() {
+      const tableBody = document.getElementById('departmentTable').getElementsByTagName('tbody')[0];
+      departments.forEach(department => {
+        const row = tableBody.insertRow();
+        row.innerHTML = `<td>${department.id}</td><td>${department.name}</td><td>${department.manager}</td>`;
+      });
+    }
+
+    window.onload = loadDepartments;
+  </script>
+</body>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 24px;
+  }
+  
+  .employee-list-container {
+    max-width: 1100px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  td {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover td {
+    background-color: #f1f1f1;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+
+</style>
+</html>

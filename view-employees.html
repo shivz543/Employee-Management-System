@@ -1,0 +1,247 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee List</title>
+  <link rel="stylesheet" href="styles.css">
+<style>
+   body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    background-color: #28a745;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 24px;
+  }
+  
+  .department-list-container {
+    max-width: 1100px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  td {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover td {
+    background-color: #f1f1f1;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  .btn:hover {
+    background-color: #218838;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+  <div class="navbar">
+    <h1>Employee List</h1>
+  </div>
+
+  <div class="employee-list-container">
+    <h2>Employees</h2>
+    <table id="employeeTable" border="1" style="width:100%; margin-top: 20px;">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Department</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+      </tbody>
+    </table>
+    <br>
+    <a href="dashboard.html" class="btn">Back to Dashboard</a>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    const employees = [
+      { id: 1, name: "John Doe", position: "Software Engineer", department: "Development" },
+      { id: 2, name: "Jane Smith", position: "Project Manager", department: "Operations" },
+      { id: 3, name: "Sam Johnson", position: "HR Manager", department: "Human Resources" },
+      { id: 4, name: "Emily Davis", position: "UI/UX Designer", department: "Design" },
+      { id: 5, name: "Michael Brown", position: "QA Engineer", department: "Quality Assurance" },
+    ];
+
+    function loadEmployees() {
+      const tableBody = document.getElementById('employeeTable').getElementsByTagName('tbody')[0];
+      employees.forEach(employee => {
+        const row = tableBody.insertRow();
+        row.innerHTML = `<td>${employee.id}</td><td>${employee.name}</td><td>${employee.position}</td><td>${employee.department}</td>`;
+      });
+    }
+
+    window.onload = loadEmployees;
+  </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee List</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background-color: #28a745;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+    }
+    .employee-list-container {
+      max-width: 1100px;
+      margin: 50px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+    th {
+      background-color: #28a745;
+      color: white;
+    }
+    td {
+      background-color: #f9f9f9;
+    }
+    tr:hover td {
+      background-color: #f1f1f1;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #28a745;
+      color: white;
+      padding: 12px 20px;
+      margin-top: 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      text-align: center;
+    }
+    .btn:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <h1>Employee List</h1>
+  </div>
+
+  <div class="employee-list-container">
+    <h2>Employees</h2>
+    <table id="employeeTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Department</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Employee data will be dynamically added here -->
+      </tbody>
+    </table>
+    <br>
+    <a href="dashboard.html" class="btn">Back to Dashboard</a>
+  </div>
+
+  <script>
+    function loadEmployees() {
+      const employees = JSON.parse(localStorage.getItem('employees')) || [];
+      const tableBody = document.getElementById('employeeTable').getElementsByTagName('tbody')[0];
+      tableBody.innerHTML = '';
+
+      employees.forEach(employee => {
+        const row = tableBody.insertRow();
+        row.innerHTML = `
+          <td>${employee.id}</td>
+          <td>${employee.name}</td>
+          <td>${employee.position}</td>
+          <td>${employee.department}</td>
+        `;
+      });
+    }
+
+    window.onload = loadEmployees;
+  </script>
+</body>
+</html>

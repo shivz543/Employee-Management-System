@@ -1,0 +1,163 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f8ff; /* Soft light blue background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Login Container */
+.login-container {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect on container */
+.login-container:hover {
+  transform: translateY(-5px);
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: #003366; /* Dark blue color for title */
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+h2 {
+  text-align: center;
+  color: #003366;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #0056b3; /* Lighter blue for labels */
+  font-weight: 600;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  transition: border-color 0.3s ease;
+}
+
+/* Input focus effect */
+input:focus, select:focus {
+  border-color: #007bff; /* Blue border on focus */
+  outline: none;
+}
+
+/* Submit button styling */
+.btn, input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover, input[type="submit"]:hover {
+  background-color: #0056b3; /* Dark blue on hover */
+}
+
+/* Error message styling */
+.error-message {
+  color: red;
+  margin-top: 12px;
+  font-size: 14px;
+  display: none;
+}
+
+/* Links styling */
+a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 30px;
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+a:hover {
+  background-color: #0056b3;
+}
+
+/* Form Container (for multi-field forms like Add Employee) */
+.form-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Hover effect on input fields */
+input[type="text"], input[type="password"], select {
+  transition: box-shadow 0.3s ease;
+}
+
+input[type="text"]:hover, input[type="password"]:hover, select:hover {
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+/* Responsive Design for mobile screens */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 20px;
+    max-width: 350px;
+  }
+
+  .form-container {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  h1, h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn, input[type="submit"], a {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

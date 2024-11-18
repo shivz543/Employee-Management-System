@@ -1,0 +1,188 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Employee</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="navbar">
+    <h1>Add New Employee</h1>
+  </div>
+
+  <div class="form-container">
+    <h2>Employee Details</h2>
+
+    <form action="submit-employee.php" method="POST">
+      <label for="name">Employee Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter employee's name" required>
+
+      <label for="email">Employee Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter employee's email" required>
+
+      <label for="department">Department</label>
+      <select id="department" name="department">
+        <option value="HR">HR</option>
+        <option value="IT">IT</option>
+        <option value="Finance">Finance</option>
+        <option value="Sales">Sales</option>
+      </select>
+
+      <label for="position">Position</label>
+      <input type="text" id="position" name="position" placeholder="Enter employee's position" required>
+
+      <label for="salary">Salary</label>
+      <input type="number" id="salary" name="salary" placeholder="Enter employee's salary" required>
+
+      <input type="submit" value="Add Employee" class="btn">
+    </form>
+  </div>
+
+  <a href="dashboard.html" class="btn">Back to Dashboard</a>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Employee</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background-color: #28a745;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+    form label {
+      font-weight: bold;
+      margin-bottom: 8px;
+      display: block;
+    }
+    form input, form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    input[type="submit"] {
+      background-color: #28a745;
+      color: white;
+      cursor: pointer;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    input[type="submit"]:hover {
+      background-color: #218838;
+    }
+    a {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      margin-top: 20px;
+      background-color: #007bff;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 5px;
+    }
+    a:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <h1>Add New Employee</h1>
+  </div>
+
+  <div class="form-container">
+    <h2>Employee Details</h2>
+    <form id="addEmployeeForm">
+      <label for="name">Employee Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter employee's name" required>
+
+      <label for="email">Employee Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter employee's email" required>
+
+      <label for="department">Department</label>
+      <select id="department" name="department" required>
+        <option value="HR">HR</option>
+        <option value="IT">IT</option>
+        <option value="Finance">Finance</option>
+        <option value="Sales">Sales</option>
+      </select>
+
+      <label for="position">Position</label>
+      <input type="text" id="position" name="position" placeholder="Enter employee's position" required>
+
+      <label for="salary">Salary</label>
+      <input type="number" id="salary" name="salary" placeholder="Enter employee's salary" required>
+
+      <input type="submit" value="Add Employee">
+    </form>
+  </div>
+
+  <a href="view-employees.html">View Employees</a>
+
+  <script>
+    document.getElementById('addEmployeeForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Retrieve form data
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const department = document.getElementById('department').value;
+      const position = document.getElementById('position').value;
+
+      // Retrieve existing employees from localStorage
+      const employees = JSON.parse(localStorage.getItem('employees')) || [];
+
+      // Add new employee to the array
+      const newEmployee = {
+        id: employees.length + 1, // Generate ID
+        name,
+        position,
+        department
+      };
+
+      employees.push(newEmployee);
+
+      // Save back to localStorage
+      localStorage.setItem('employees', JSON.stringify(employees));
+
+      // Reset the form and provide feedback
+      this.reset();
+      alert('Employee added successfully!');
+    });
+  </script>
+</body>
+</html>
